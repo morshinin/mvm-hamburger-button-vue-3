@@ -1,0 +1,28 @@
+{
+  "name": "mvm-hamburger-button-vue-3",
+  "version": "1.2.0",
+  "type": "module",
+  "files": ["dist"],
+  "main": "./dist/mvm-hamburger-button-vue-3.umd.cjs",
+  "module": "./dist/mvm-hamburger-button-vue-3.js",
+  "exports": {
+    ".": {
+      "import": "./dist/mvm-hamburger-button-vue-3.js",
+      "require": "./dist/mvm-hamburger-button-vue-3.umd.js"
+    },
+    "./dist/style.css": "./dist/style.css"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "vue": "^3.3.4"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.2.3",
+    "sass": "^1.69.2",
+    "vite": "^4.4.5"
+  }
+}
