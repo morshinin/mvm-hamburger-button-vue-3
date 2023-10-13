@@ -6,44 +6,40 @@
     </div>
 </template>
 
-<script setup>
-import { ref, computed, defineProps } from 'vue'
+<script lang="ts" setup>
+import { ref, computed } from 'vue'
+import type { Ref } from 'vue'
 
-const props = defineProps({
-    showHoverEffect: {
-        type: Boolean,
-        default: false,
-    },
-    width: {
-        type: String,
-        default: '50px',
-    },
-    height: {
-        type: String,
-        default: '30px',
-    },
-    animationSpeed: {
-        type: String,
-        default: '.5s',
-    },
-    barHeight: {
-        type: String,
-        default: '10%',
-    },
-    color: {
-        type: String,
-        default: '#1b4965',
-    },
-    hoverColor: {
-        type: String,
-        default: '#62b6cb',
-    },
+interface Props {
+    showHoverEffect?: boolean
+    width?: string
+    height?: string
+    animationSpeed?: string
+    barHeight?: string
+    color?: string
+    hoverColor?: string
+}
+
+interface ClassList {
+    ['-is-active']: boolean
+    ['-is-not-active']: boolean 
+    ['-has-hover-effect']: boolean
+}
+
+const props = withDefaults(defineProps<Props>(), {
+    showHoverEffect: false,
+    width: '50px',
+    height: '30px',
+    animationSpeed: '.5s',
+    barHeight: '10%',
+    color: '#1b4965',
+    hoverColor: '#62b6cb',
 })
 
-const isActive = ref(false)
-const isAnimatedOnLoad = ref(true)
+const isActive: Ref<boolean> = ref(false)
+const isAnimatedOnLoad: Ref<boolean> = ref(true)
 
-const classList = computed(() => {
+const classList = computed<ClassList>(() => {
     return {
         ['-is-active']: isActive.value,
         ['-is-not-active']: isAnimatedOnLoad.value,

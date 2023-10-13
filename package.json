@@ -2,7 +2,9 @@
   "name": "mvm-hamburger-button-vue-3",
   "version": "1.2.0",
   "type": "module",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "main": "./dist/mvm-hamburger-button-vue-3.umd.cjs",
   "module": "./dist/mvm-hamburger-button-vue-3.js",
   "exports": {
@@ -18,6 +20,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "typescript": "^5.2.2",
     "vue": "^3.3.4"
   },
   "devDependencies": {
